@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array/>
+<array>
+	<string>&quot;Strive not to be a success, but rather to be of value&quot; –Albert Einstein</string>
+	<string>&quot;I attribute my success to this: I never gave or took any excuse&quot; –Florence Nightingale</string>
+	<string>&quot;Life is 10% what happens to me and 90% of how I react to it&quot; –Charles Swindoll</string>
+	<string>&quot;The best time to plant a tree was 20 years ago. The second best time is now&quot; –Chinese Proverb</string>
+	<string>&quot;Whatever the mind of man can conceive and believe, it can achieve&quot; –Napoleon Hill</string>
+</array>
 </plist>
