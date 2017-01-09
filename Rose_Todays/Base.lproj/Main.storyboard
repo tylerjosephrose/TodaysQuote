@@ -31,6 +31,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.24044359069290047" green="0.25074763458519628" blue="0.25127509715025909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="lblQuote" destination="30O-4k-63w" id="Uto-GT-uuT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
