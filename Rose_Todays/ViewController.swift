@@ -29,11 +29,6 @@ class ViewController: UIViewController {
 		displayQuote()
 	}
 	
-	// func for display another quote
-	@IBAction func userClicked() {
-		displayQuote()
-	}
-	
 	private func displayQuote() {
 		// generate random number within size of quotes
 		let randomIndex = Int(arc4random()) % quotes.count
@@ -42,7 +37,17 @@ class ViewController: UIViewController {
 		// set label text to singleQuote
 		lblQuote.text = singleQuote
 	}
+	
+	// func for display another quote
+	@IBAction func userClicked() {
+		displayQuote()
+	}
 
+	@IBAction func userSwiped(_ sender: UISwipeGestureRecognizer) {
+		// any swipe will trigger new quote
+		displayQuote()
+	}
+	
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.

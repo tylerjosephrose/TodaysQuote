@@ -41,12 +41,21 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.24044359069290047" green="0.25074763458519628" blue="0.25127509715025909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="O8T-Lq-0II" appends="YES" id="wgj-od-Jpy"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="lblQuote" destination="30O-4k-63w" id="Uto-GT-uuT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="O8T-Lq-0II">
+                    <connections>
+                        <action selector="userSwiped:" destination="BYZ-38-t0r" id="vy0-An-Uu2"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
