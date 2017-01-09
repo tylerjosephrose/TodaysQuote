@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 	// declare our array of quotes
 	//var quotes : Array<String>!
 	var quotes : NSArray!
-
+    // var for quote label
 	@IBOutlet weak var lblQuote: UILabel!
 	
 	override func viewDidLoad() {
@@ -25,9 +25,21 @@ class ViewController: UIViewController {
 		let filePath = appBundle.path(forResource: "ListOfQuotes", ofType: "plist")!
 		// Load quotes from filePath to quotes
 		quotes = NSArray(contentsOfFile: filePath)
-		// Get single quote from list
-		let singleQuote : String = quotes.object(at: 1) as! String
-		// Set label text to this singleQuote
+		// Call function to display quote
+		displayQuote()
+	}
+	
+	// func for display another quote
+	@IBAction func userClicked() {
+		displayQuote()
+	}
+	
+	private func displayQuote() {
+		// generate random number within size of quotes
+		let randomIndex = Int(arc4random()) % quotes.count
+		// retrieve the random quote
+		let singleQuote = quotes.object(at: randomIndex) as! String
+		// set label text to singleQuote
 		lblQuote.text = singleQuote
 	}
 

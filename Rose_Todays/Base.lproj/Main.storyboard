@@ -28,6 +28,17 @@
                                 <color key="textColor" red="0.72638247119999999" green="1" blue="0.65935989429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NIP-cG-f4C">
+                                <rect key="frame" x="102" y="401" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0017752185229999999" green="0.46264594790000002" blue="0.99926763770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Display Another Quote">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="qJh-Eq-uUT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.24044359069290047" green="0.25074763458519628" blue="0.25127509715025909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
