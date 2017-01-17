@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D30a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,11 +39,27 @@
                                     <action selector="userClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="qJh-Eq-uUT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjQ-xt-xJ5">
+                                <rect key="frame" x="102" y="479" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0017752185229999999" green="0.46264594790000002" blue="0.99926763770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Display Table of Quotes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GRX-3a-P5H" kind="popoverPresentation" popoverAnchorView="BjQ-xt-xJ5" id="0OR-Nz-mqv">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.24044359069290047" green="0.25074763458519628" blue="0.25127509715025909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="O8T-Lq-0II" appends="YES" id="wgj-od-Jpy"/>
+                            <outletCollection property="gestureRecognizers" destination="4hF-Mv-JQz" appends="YES" id="P8n-iX-e70"/>
+                            <outletCollection property="gestureRecognizers" destination="0XI-YD-ffJ" appends="YES" id="Hlh-zk-rfN"/>
+                            <outletCollection property="gestureRecognizers" destination="rUG-9a-0Vr" appends="YES" id="xHS-1n-fJb"/>
                         </connections>
                     </view>
                     <connections>
@@ -56,8 +72,76 @@
                         <action selector="userSwiped:" destination="BYZ-38-t0r" id="vy0-An-Uu2"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="up" id="4hF-Mv-JQz">
+                    <connections>
+                        <action selector="userSwiped:" destination="BYZ-38-t0r" id="tU4-qe-ZyT"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="0XI-YD-ffJ">
+                    <connections>
+                        <action selector="userSwiped:" destination="BYZ-38-t0r" id="XUb-ul-uVb"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="down" id="rUG-9a-0Vr">
+                    <connections>
+                        <action selector="userSwiped:" destination="BYZ-38-t0r" id="jfe-1X-N8P"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Table of Quotes-->
+        <scene sceneID="CqJ-hU-o9i">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDm-cd-e5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="qmq-7j-bLf" customClass="TableTableViewController" customModule="Rose_Todays" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OZB-dN-bgO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4jn-cI-roA">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4jn-cI-roA" id="biy-8E-0T0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qmq-7j-bLf" id="cHI-Qp-BOT"/>
+                            <outlet property="delegate" destination="qmq-7j-bLf" id="DUO-bA-20Q"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Table of Quotes" id="KAQ-Q4-PiP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="j6M-nj-ebg">
+                            <connections>
+                                <action selector="dismissPopover:" destination="qmq-7j-bLf" id="rFA-4a-uK4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="1676" y="148"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bbj-C2-bMi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GRX-3a-P5H" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="faz-1i-wQF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qmq-7j-bLf" kind="relationship" relationship="rootViewController" id="MBC-Pu-Ruy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eVG-fC-jBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.79999999999995" y="147.97601199400302"/>
         </scene>
     </scenes>
 </document>
